@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractional Size Grid</title>
+  <style>
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+
+      /* grid template rows = column 1 = 1fr and column 2 = 2fr */
+      /* grid template column = row 1 = 1fr  and row 2 = 2fr*/
+    }
+
+    .grid-item {
+      font-size: 3rem;
+      background-color: darkviolet;
+      border: 5px solid goldenrod;
+      color: white;
+    }
+
+    .flex-container {
+      background-color: pink;
+      display: flex;
+      width: 100%;
+
+    }
+    .square {
+      height: 25px;
+      width: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Fractional Size Grid</h1>
+  <p>The row is always going to shrink and grow according to the width of the website.</p>
+  <p>The column's content is always going to wrap is always acc it's three o'clockording to the content inside of the area.</p>
+  <div class="grid-container">
+    <div class="grid-item">1 
+      <p>row 1fr x col 1fr</p>
+        <div class="flex-container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+    </div>
+    <div class="grid-item">2 <p>row 1fr x col 2fr</p></div>
+    <div class="grid-item">3 
+      <p>row 2fr x col 1fr</p>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+    <div class="grid-item">4 
+      <p>row 2fr x col 2fr</p>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+  </div>
+</body>
+
+</html>

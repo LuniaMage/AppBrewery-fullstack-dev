@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Size Grid</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-rows: 100px auto;
+      grid-template-columns: 200px auto;
+    }
+
+    .grid-item {
+      font-size: 3rem;
+      background-color: darkviolet;
+      border: 5px solid goldenrod;
+      color: white;
+    }
+
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+
+    .flex-item {
+      height: 25px;
+      width: 95px;
+      background-color: white;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Auto Size Grid</h1>
+
+  <h2></h2>
+
+  <h3>grid-template-rows: 100px auto;</h3>
+    <p>Row 1 is only a 100px in height, the flex items in column 1 wrapped, but get cut off. We only see 1 1/2 of the flex items</p>
+    <p>Row 2 is set to "auto" so, the flex items wrap and the grid area stretches to fit the content inside.</p> 
+  
+  <h3> grid-template-columns: 200px auto; </h3> 
+    <p>Column 1 is fixed at 200px in width so it's enought to handle</p>
+    <p>The first column will be fixed at 200px, and the second column will shrink and expand according to the webstie's width.</p>
+    <div class="grid-container">
+
+      <!-- container 1 -->
+         <div class="grid-item">1
+             <div class="flex-container">
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+             </div>
+           </div>
+     <!-- container 2 -->
+           <div class="grid-item">2
+             <div class="flex-container">
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+             </div>
+           </div>
+     <!-- container 3 -->
+           <div class="grid-item">3
+             <div class="flex-container">
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+             </div>
+           </div>
+     <!-- container 4 -->
+           <div class="grid-item">4
+             <div class="flex-container">
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+               <div class="flex-item"></div>
+             </div>
+           </div>
+       <!-- end grid container -->
+         </div>
+     
+  
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Size Grid</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-rows: 100px auto;
+      grid-template-columns: 200px auto;
+    }
+
+    .grid-item {
+      font-size: 3rem;
+      background-color: darkviolet;
+      border: 5px solid goldenrod;
+      color: white;
+    }
+
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+
+    .flex-item {
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      height: 25px;
+      width: 95px;
+      background-color: white;
+      
+      font-size: 1rem;
+      color: black;
+  
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+ img {
+      height: 300px;
+      width: 25%;
+      min-width: 400px;
+      background-color: aqua;
+    }
+
+    span {
+      color: purple;
+      font-weight: bold;
+    }
+
+    /* Modal */
+    /* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <h1>Auto Size Grid</h1>
+
+  <h2></h2>
+
+<!-- grid-template-rows: 100px auto;< -->
+<!-- grid-template-columns: 200px auto; -->
+
+<!-- row 1 has a height of 100px -->
+<!-- row 2 has a height of auto -->
+<!-- column 1 has a width of 200px -->
+<!-- column 2 has a width of auto -->
+
+<!-- grid area 1 is column 1 x row 1 -->
+<!-- grid area 1 is 100px x 200px -->
+<!-- grid area 1 is fixed in height and width -->
+
+<!-- grid area 2 is row 1 x column 2 -->
+<!-- grid area 2 is 100px x auto -->
+<!-- grid area 2 has a fixed height but auto for a width -->
+
+  <h4>grid area 1</h4>
+    <ul>
+      <li>grid-template-rows: <span>100px</span> auto;</li>
+      <li>grid-template-columns: <span>200px</span> auto;</li>
+      <li>grid area 1 is column 1 x row 1</li>
+      <li>grid area 1 is fixed 100px in height and 200px width.</li>
+      <li>the width and height of this area will stay the same regardless of the browser's window size.</li>
+    </ul>
+
+  <h3>Grid Area 2</h3>
+    <ul>
+      <li>grid-template-rows: <span>100px</span> auto;</li>
+      <li>grid-template-columns: 200px <span>auto</span>;</li>
+      <li>grid area 2 is row 1 column 2</li>
+      <li>it's 100px in height it's 6 o'clock it's 7 o'clock yeah x auto </li>
+      <li>it's fixed 100px in height.</li>
+      <li>row 1 flex items will be cut off if they exceed 100px in height.</li>
+      <li>column 2 has auto as a width.</li>
+      <li>column 2 will stretch to 100% of the website's width</li>
+    </ul>
+
+  <h3> Grid Area 3 </h3> 
+  <ul>
+    <li>grid-template-rows: 100px <span>auto</span>;</li>
+    <li>grid-template-columns: 200px auto;</li>
+    <li>grid area 3 has 200px x </li>
+    <li>grid row 3 has an auto as a height</li>
+    <li>column 1 has a width of </li>
+  </ul>
+  <h3>  </h3> 
+
+    <p>Column 1 is fixed at 200px in width so it has enough room for the 95px width of the boxes at the website's full width. Even at it's smallest (as image below) it will still have enough room.</p>
+    <p>Column 2 (gred areas 2 & 4) is auto and will stretch to fill the website's full width, but when width is decresed the flex items will wrap until there is no room left. Flex items in row 1 column 2 (grid area 2) on smaller window size will be cut off because its row height or grid template rwo is fixed at 100px.
+  . ** Browser window doesn't go below 400px.</p>
+
+    <!-- Trigger the Modal -->
+
+    <img id="myImg" src="../grid-sizing/assets/css-grid-auto-smallest-width.png" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="mobile version of auto grid sizing with flex items">
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+    <div class="grid-container">
+
+      <!-- container 1 -->
+         <div class="grid-item">1
+             <div class="flex-container">
+               <div class="flex-item">1</div>
+               <div class="flex-item">2</div>
+               <div class="flex-item">3</div>
+               <div class="flex-item">4</div>
+             </div>
+           </div>
+     <!-- container 2 -->
+           <div class="grid-item">2
+             <div class="flex-container">
+               <div class="flex-item">1</div>
+               <div class="flex-item">2</div>
+               <div class="flex-item">3</div>
+               <div class="flex-item">4</div>
+             </div>
+           </div>
+     <!-- container 3 -->
+           <div class="grid-item">3
+             <div class="flex-container">
+               <div class="flex-item">1</div>
+               <div class="flex-item">2</div>
+               <div class="flex-item">3</div>
+               <div class="flex-item">4</div>
+             </div>
+           </div>
+     <!-- container 4 -->
+           <div class="grid-item">4
+             <div class="flex-container">
+               <div class="flex-item">1</div>
+               <div class="flex-item">2</div>
+               <div class="flex-item">3</div>
+               <div class="flex-item">4</div>
+             </div>
+           </div>
+       <!-- end grid container -->
+         </div>
+     
+</body>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+</script>
+ 
+</html>

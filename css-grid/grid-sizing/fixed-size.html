@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Size Grid</title>
+  <style>
+
+  
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: 100px 200px;
+      grid-template-columns: 400px 800px;
+    }
+
+    .grid-item {
+      font-size: 3rem;
+      background-color: darkviolet;
+      border: 5px solid goldenrod;
+      color: white;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+
+    .flex-item {
+      height: 25px;
+      width: 95px;
+      background-color: white;
+    }
+
+    p {
+      font-size: 1rem;
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Fixed Size Grid</h1>
+  <p>This grid template is not responsible because of its fized height and width</p>
+ 
+  <div class="grid-container">
+
+ <!-- container 1 -->
+    <div class="grid-item">1
+        <div class="flex-container">
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+        </div>
+      </div>
+<!-- container 2 -->
+      <div class="grid-item">2
+        <div class="flex-container">
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+        </div>
+      </div>
+<!-- container 3 -->
+      <div class="grid-item">3
+        <div class="flex-container">
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+        </div>
+      </div>
+<!-- container 4 -->
+      <div class="grid-item">4
+        <div class="flex-container">
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+          <div class="flex-item"></div>
+        </div>
+      </div>
+  <!-- end grid container -->
+    </div>
+
+    <h3>Responsiveness of "Auto" property</h3>
+    <p>When you use auto on a row, the specified area will expand to fit the content inside the div.
+      When you use auto on a column it will expand to fit 100% of the website's width.
+    </p>
+</body>
+
+</html>
